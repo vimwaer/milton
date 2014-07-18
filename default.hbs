@@ -1,0 +1,74 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        {{! Document Settings }}
+        <meta charset="utf-8">
+        {{! Page Meta }}
+        <title>{{meta_title}}</title>
+        <meta name="description" content="{{meta_description}}" />
+        <meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="{{asset "styles/main.css"}}" />
+        {{! Styles'n'Scripts }}
+        {{ghost_head}}
+    </head>
+    <body class="{{body_class}}">
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+        <div class="wrapper container">
+
+            <!-- Header -->
+            <div class="header row">
+
+                <!-- Avatar -->
+                <div class="col-md-2 col-md-offset-1">
+                    <a href="{{@blog.url}}">
+                    <figure class="avatar img-circle" style="background-image:url('{{@blog.logo}}')";></figure>
+                    </a>
+                </div>
+
+                <!-- Blog title and bio -->
+                <div class="site-details col-md-6">
+                   <p class="site-title"><a href="{{@blog.url}}">{{@blog.title}}</a></p>
+                   <p class="site-description">{{@blog.description}}</p>
+                </div>
+            </div>
+
+    {{{body}}}
+
+            <footer class="footer row">
+                <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                <p class="small">Copyright &copy; {{date format="YYYY"}}  <a href="http://twitter.com/derrybirkett">@derrybirkett.</a>  If you <em>do</em> quote - please link back.</p>
+                </div>
+            </footer>
+
+        </div>
+
+        {{ghost_foot}}
+
+        <script src="{{asset "scripts/vendor.js"}}"></script>
+
+        <script type="text/javascript" src="//use.typekit.net/grj4omk.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-49947286-1');ga('send','pageview');
+        </script>
+
+        <script src="{{asset "scripts/main.js"}}"></script>
+</body>
+</html>
